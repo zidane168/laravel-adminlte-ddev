@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Log;
 
 class LocaleMiddleware
 {
@@ -19,6 +20,8 @@ class LocaleMiddleware
     {
         $locale = Session::get('locale', config('app.locale'));
         App::setlocale($locale);
+
+        Log::info('Locale set to: ' . App::getLocale());
 
         return $next($request);
     }

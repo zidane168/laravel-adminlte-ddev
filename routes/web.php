@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +17,12 @@ Route::resource('posts', PostController::class);
 
 // multiple languages
 Route::get('lang/{locale}', function ($locale) { 
+
     if (in_array($locale, config('app.locales'))) {
+       //  App::setlocale($locale);
+        
+    // print_r($locale);
+    // exit;
         session(['locale' => $locale]); 
     } 
     return redirect()->back(); 

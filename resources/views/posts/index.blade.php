@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-
-
 <ul>
     @foreach (config('app.locales') as $locale)
     <li>
@@ -15,9 +13,22 @@
 
 @section('content')
 <div class="container">
-    <h1>{{ __('post.welcome') }}
+    <ul>
+        <li>
+            <a href="{{ route('setLocale', 'en') }}">
+                English - {{ config('app.locales')[0]   }}
+            </a>
+        </li>
+        <li>
+            <a href="{{ route('setLocale', 'zh') }}">
+                Chinese - {{ config('app.locales')[1]   }}
+            </a>
+        </li>
+    </ul>
+
+    <h1>{{ __('post.welcome') }} </h1>
     <a href="{{ route('posts.create') }}" class="btn btn-primary">
-        <h1>{{ __('post.create') }}
+        <h1>{{ __('post.create') }} </h1>
     </a>
     <table class="table">
         <thead>
