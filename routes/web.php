@@ -13,16 +13,13 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// http://laravel-adminlte-ddev.ddev.site/posts
 Route::resource('posts', PostController::class);
 
 // multiple language
 Route::get('lang/{locale}', function ($locale) { 
 
-    if (in_array($locale, config('app.locales'))) {
-       //  App::setlocale($locale);
-        
-    // print_r($locale);
-    // exit;
+    if (in_array($locale, config('app.locales'))) { 
         session(['locale' => $locale]); 
     } 
     return redirect()->back(); 
