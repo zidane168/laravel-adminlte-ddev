@@ -15,7 +15,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('posts', PostController::class);
 
-// multiple languages
+// multiple language
 Route::get('lang/{locale}', function ($locale) { 
 
     if (in_array($locale, config('app.locales'))) {
@@ -27,3 +27,5 @@ Route::get('lang/{locale}', function ($locale) {
     } 
     return redirect()->back(); 
 })->name('setLocale');
+
+ 
