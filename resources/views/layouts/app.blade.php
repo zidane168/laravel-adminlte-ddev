@@ -8,6 +8,8 @@
   <title>Matdash Free Bootstrap Admin Template by Adminmart</title>
   <link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/logos/favicon.png') }}" />
   <link rel="stylesheet" href="{{ asset('assets/css/styles.min.css') }}"/>
+
+  <link rel="stylesheet" href="{{ asset('assets/css/language-switch.css') }}"/>
 </head>
 
 <body>
@@ -150,6 +152,15 @@
               </a>
             </li>
           </ul>
+
+          <div id="language-switcher"> 
+            Language 
+            <ul class="hidden" id="language">
+              <li> <a href="{{ route('setLocale', 'en') }}" class="en"> English </a> </li>
+              <li> <a href="{{ route('setLocale', 'zh') }}" class="zh"> Hong Kong </a> </li>
+            </ul>
+          </div>
+          
           <div class="px-0 navbar-collapse justify-content-end" id="navbarNav">
             <ul class="flex-row navbar-nav ms-auto align-items-center justify-content-end">
               <a href="https://adminmart.com/product/matdash-free-bootstrap-5-admin-dashboard-template/" target="_blank" class="btn btn-primary">Download Free</a>
@@ -199,6 +210,22 @@
   <script src="{{ asset('assets/js/simplebar.js') }}"></script>
   <!-- solar icons -->
   <script src="{{ asset('assets/js/iconify-icon.min.js') }}"></script>
-</body>
 
+  <script> 
+    document.addEventListener('DOMContentLoaded', (event) => { 
+      const languageSwitcher = document.getElementById('language-switcher');
+      const languageMenu = document.getElementById('language'); 
+      languageSwitcher.addEventListener('click', () => { 
+        languageMenu.classList.toggle('hidden'); 
+        languageMenu.classList.toggle('visible');  
+
+        languageSwitcher.val ($('#language-switcher .en').val())
+
+
+        const selectedLang = target.getAttribute('data-lang'); changeLanguage(selectedLang);
+      }); 
+    });
+  </script>
+  
+</body> 
 </html>

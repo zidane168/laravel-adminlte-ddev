@@ -1,0 +1,20 @@
+ul.hidden {
+    display: none;
+}
+
+ul.visible {
+    display: block;
+}
+
+#language-switcher {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#language-switcher #language {
+    background-color: rgb(223, 215, 215);
+    padding: 10px;
+    border-radius: 10px;
+    list-style-type: none;
+}
+ 

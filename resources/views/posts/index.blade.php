@@ -1,16 +1,5 @@
 @extends('layouts.app')
-
-<ul>
-    @foreach (config('app.locales') as $locale)
-    <li>
-        <a href="{{ route('setLocale', $locale) }}">
-            {{ strtoupper($locale) }}
-        </a>
-    </li>
-    @endforeach
-</ul>
-
-
+ 
 @section('content')
 <div class="container">
     <ul>
