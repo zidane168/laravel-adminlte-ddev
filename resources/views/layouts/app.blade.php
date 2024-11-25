@@ -219,10 +219,10 @@
         languageMenu.classList.toggle('hidden'); 
         languageMenu.classList.toggle('visible');  
 
-        languageSwitcher.val ($('#language-switcher .en').val())
-
+        languageSwitcher.val ($('#language-switcher .en').val()) 
 
         const selectedLang = target.getAttribute('data-lang'); changeLanguage(selectedLang);
+        languageSwitcher
       }); 
     });
   </script>
